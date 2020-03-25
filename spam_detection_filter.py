@@ -32,7 +32,7 @@ nltk.download_shell() #for downloading stopwords package
 # In[5]:
 
 
-messages=pd.read_csv('smsspamcollection/SMSSpamCollection',sep='\t',names=['label','message'])
+messages=pd.read_csv('SMSSpamCollection',sep='\t',names=['label','message'])
 
 
 # In[6]:
