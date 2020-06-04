@@ -1,0 +1,90 @@
+<html lang="en">
+<style>
+    
+    input[type=text]
+    {
+        width: 50%;
+        height: 8%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: flex;
+        border: 2px solid blue;
+        border-radius: 15px;
+    }
+    input[type=submit] {
+        width: 10%;
+        background-color: #4CAF50;
+        color: white;   
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+    #headings {
+        font-size: 35px;
+        font-family: cursive;
+        color:darkblue;
+    }
+    #form h1{
+        font-size: 50px;
+        color: red;
+    }
+
+    #models h1{
+        font-size: 60px;
+        color: black;
+    }
+
+    body {
+        background-image: url('/static/spam.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    fieldset {
+        width: 98%;
+        padding: 10px;
+        border: none;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Detector</title>
+</head>
+<body>
+    <header>
+        <div id="headings">
+            <center>
+                <h1>Spam Detection<br>using Machine Learning</h1>
+            </center>
+        </div>
+    </header>
+    <div id='form'>
+        <form method="GET" action="/predict" enctype="multipart/form-data">
+            <fieldset id="models"> 
+                <center>
+                    <h1>MultiNomial NB algorithm</h1></center>
+                </fieldset>
+                <br>
+            <fieldset>
+                <center>
+                    <h1>Enter the message</h1>
+                    <input type="text"id="message" name="message"
+                    placeholder="Message" required>
+                    <center>
+                    <input type="submit" value="Check"></button>
+                </center>
+            </center>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
