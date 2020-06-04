@@ -3,19 +3,19 @@ import joblib
 import pandas as pd
 from flask.templating import render_template
 import string
+import nltk
 from nltk.corpus import stopwords
 
-app = Flask(__name__)
 
+app = Flask(__name__)
 
 def clean_text(str):
     
     clean_pun=[ch for ch in str if ch not in string.punctuation]
     clean_pun1=''.join(clean_pun)
-        
     clean_stop1=list(clean_pun1.split( ))
     clean_str=[x for x in clean_stop1 if x not in stopwords.words('english')]
-        
+    
     return clean_str
 
 @app.route("/")
@@ -31,4 +31,5 @@ def predict():
 
 
 if __name__ == '__main__':
+    nltk.download('stopwords')
     app.run()
