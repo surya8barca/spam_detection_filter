@@ -7,17 +7,15 @@ from nltk.corpus import stopwords
 
 app = Flask(__name__)
 
+
 def clean_text(str):
     
-    #removing punctuation
     clean_pun=[ch for ch in str if ch not in string.punctuation]
     clean_pun1=''.join(clean_pun)
-    
-    #removing stopwords
+        
     clean_stop1=list(clean_pun1.split( ))
     clean_str=[x for x in clean_stop1 if x not in stopwords.words('english')]
-    
-    
+        
     return clean_str
 
 @app.route("/")
@@ -30,6 +28,7 @@ def predict():
     model=joblib.load('model.sav')
     prediction=model.predict([result["message"]])
     return jsonify({'result': prediction[0]})
+
 
 if __name__ == '__main__':
     app.run()
